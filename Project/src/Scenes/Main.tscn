@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/Assets/Fonts/PressStart2P/PressStart2P-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://src/Scenes/Button.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Scripts/Main.gd" type="Script" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -9,6 +11,7 @@ font_data = ExtResource( 1 )
 [node name="Main" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -71,56 +74,66 @@ margin_top = 350.0
 margin_right = 500.0
 margin_bottom = 360.0
 
-[node name="TopLeft" type="Button" parent="Game"]
+[node name="TopLeft" parent="Game" instance=ExtResource( 2 )]
 margin_left = 25.0
 margin_top = 25.0
 margin_right = 125.0
 margin_bottom = 125.0
 
-[node name="TopCenter" type="Button" parent="Game"]
+[node name="TopCenter" parent="Game" instance=ExtResource( 2 )]
 margin_left = 200.0
 margin_top = 25.0
 margin_right = 300.0
 margin_bottom = 125.0
 
-[node name="TopRight" type="Button" parent="Game"]
+[node name="TopRight" parent="Game" instance=ExtResource( 2 )]
 margin_left = 375.0
 margin_top = 25.0
 margin_right = 475.0
 margin_bottom = 125.0
 
-[node name="MiddleLeft" type="Button" parent="Game"]
+[node name="MiddleLeft" parent="Game" instance=ExtResource( 2 )]
 margin_left = 25.0
 margin_top = 200.0
 margin_right = 125.0
 margin_bottom = 300.0
 
-[node name="MiddleCenter" type="Button" parent="Game"]
+[node name="MiddleCenter" parent="Game" instance=ExtResource( 2 )]
 margin_left = 200.0
 margin_top = 200.0
 margin_right = 300.0
 margin_bottom = 300.0
 
-[node name="MiddleRight" type="Button" parent="Game"]
+[node name="MiddleRight" parent="Game" instance=ExtResource( 2 )]
 margin_left = 375.0
 margin_top = 200.0
 margin_right = 475.0
 margin_bottom = 300.0
 
-[node name="BottomLeft" type="Button" parent="Game"]
+[node name="BottomLeft" parent="Game" instance=ExtResource( 2 )]
 margin_left = 25.0
 margin_top = 375.0
 margin_right = 125.0
 margin_bottom = 475.0
 
-[node name="BottomCenter" type="Button" parent="Game"]
+[node name="BottomCenter" parent="Game" instance=ExtResource( 2 )]
 margin_left = 200.0
 margin_top = 375.0
 margin_right = 300.0
 margin_bottom = 475.0
 
-[node name="BottomRight" type="Button" parent="Game"]
+[node name="BottomRight" parent="Game" instance=ExtResource( 2 )]
 margin_left = 375.0
 margin_top = 375.0
 margin_right = 475.0
 margin_bottom = 475.0
+
+[connection signal="pressed" from="Game/TopLeft" to="." method="_on_TopLeft_pressed"]
+[connection signal="pressed" from="Game/TopCenter" to="." method="_on_TopCenter_pressed"]
+[connection signal="pressed" from="Game/TopRight" to="." method="_on_TopRight_pressed"]
+[connection signal="pressed" from="Game/MiddleLeft" to="." method="_on_MiddleLeft_pressed"]
+[connection signal="pressed" from="Game/MiddleCenter" to="." method="_on_MiddleCenter_pressed"]
+[connection signal="pressed" from="Game/MiddleRight" to="." method="_on_MiddleRight_pressed"]
+[connection signal="pressed" from="Game/BottomLeft" to="." method="_on_BottomLeft_pressed"]
+[connection signal="pressed" from="Game/BottomCenter" to="." method="_on_BottomCenter_pressed"]
+[connection signal="pressed" from="Game/BottomRight" to="." method="_on_BottomRight_pressed"]
