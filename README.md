@@ -2,7 +2,7 @@
 
 ## Description
 
-A simple tic tac toe game create in godot, just for learning :)
+A simple tic tac toe game created in godot, just for learning :)
 
 ## Links
 
